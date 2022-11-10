@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Icon Flaticon -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lottie Player for Animation -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <title>Sistem Manajemen Pengelolaan Gedung</title>
+</head>
+<body>
+    <nav class="navbar fixed-top bg-secondary p-0 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 m-auto" style="min-height:64px;">
+        <div class="d-flex flex-fill justify-content-start align-items-center flex-row py-0 px-xl-3 px-lg-3 px-md-3 px-sm-3 px-3">
+            <button type="button" class="btn btn-red d-flex justify-content-center align-items-center" style="height:40px;">
+                <i class="fi fi-sr-add mr-2"></i>
+                <p class="m-0">
+                    Buat Reservasi
+                </p>
+            </button>
+        </div>
+        <div class="d-flex justify-content-center-align-items-center">
+            <a class="btn btn-icon" href="./notifications.html">
+                <i class="fi fi-rr-bell"></i>
+            </a>
+            <button class="btn btn-icon" data-toggle="dropdown" data-display="static" aria-expanded="false">
+                <i class="fi fi-rr-user"></i>
+            </button>
+            <div class="container-profile-menu dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+                <p class="user-name m-0 font-weight-bold px-3 text-center my-2">Dede Fuji Abdul</p>
+                <button class="dropdown-item d-flex align-items-center" type="button">
+                    <i class="fi fi-rr-user icon-menu"></i>
+                    <p class="m-0 flex-fill mx-3">Perbaharui Profile</p>
+                    <i class="fi fi-sr-angle-right"></i>
+                </button>
+                <button class="dropdown-item d-flex align-items-center" type="button">
+                    <i class="fi fi-rr-lock icon-menu"></i>
+                    <p class="m-0 flex-fill mx-3">Perbaharui Kata Sandi</p>
+                    <i class="fi fi-sr-angle-right"></i>
+                </button>
+                <button class="dropdown-item d-flex align-items-center" type="button">
+                    <i class="fi fi-rr-sign-out-alt icon-menu"></i>
+                    <p class="m-0 flex-fill mx-3">Keluar</p>
+                    <i class="fi fi-sr-angle-right"></i>
+                </button>
+              </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 m-auto" role="main">
+        <div class="container-head bg-white py-3 px-2" style="margin-top:64px;">
+            <h5 class="font-weight-bold">List Booking</h5>
+            <div class="d-flex flex-row w-100 align-items-center">
+                <p class="m-0 flex-fill">
+                    Tampilkan Data :
+                </p>
+                <select class="form-control form-control-sm form-filter" name="filter" title="filter" style="max-width:150px;">
+                    <option>Semua</option>
+                    <option>Akan Datang</option>
+                    <option>Selesai</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="container-content-list bg-white py3 px2 d-flex flex-column">
+            <a class="content-item text-decoration-none d-flex flex-column w-100 p-3 my-2">
+                <div class="item-title d-flex justify-content-between">
+                    <h5 class="content-title m-0 mr-2">Peringatan Hari Pahlawan</h5>
+                    <p class="content-status-1 m-0">
+                        Akan Datang
+                    </p>
+                </div>
+                <p class="content-time m-0 mt-1">
+                    Kamis, 10 November 2022 | 08:00
+                </p>
+                <p class="content-desc m-0 mt-3">
+                    Lokasi: Gedung Rapat Paripurna
+                </p>
+            </a>
+            <a class="content-item text-decoration-none d-flex flex-column w-100 p-3 my-2">
+                <div class="item-title d-flex justify-content-between">
+                    <h5 class="content-title m-0 mr-2">Peringatan Hari Pahlawan</h5>
+                    <p class="content-status-2 m-0">
+                        Selesai
+                    </p>
+                </div>
+                <p class="content-time m-0 mt-1">
+                    Kamis, 10 November 2022 | 08:00
+                </p>
+                <p class="content-desc m-0 mt-3">
+                    Lokasi: Gedung Rapat Paripurna
+                </p>
+            </a>
+            <a class="content-item text-decoration-none d-flex flex-column w-100 p-3 my-2">
+                <div class="item-title d-flex justify-content-between">
+                    <h5 class="content-title m-0 mr-2">Peringatan Hari Pahlawan</h5>
+                    <p class="content-status-2 m-0">
+                        Selesai
+                    </p>
+                </div>
+                <p class="content-time m-0 mt-1">
+                    Kamis, 10 November 2022 | 08:00
+                </p>
+                <p class="content-desc m-0 mt-3">
+                    Lokasi: Gedung Rapat Paripurna
+                </p>
+            </a>
+            <a class="content-item text-decoration-none d-flex flex-column w-100 p-3 my-2">
+                <div class="item-title d-flex justify-content-between">
+                    <h5 class="content-title m-0 mr-2">Peringatan Hari Pahlawan</h5>
+                    <p class="content-status-2 m-0">
+                        Selesai
+                    </p>
+                </div>
+                <p class="content-time m-0 mt-1">
+                    Kamis, 10 November 2022 | 08:00
+                </p>
+                <p class="content-desc m-0 mt-3">
+                    Lokasi: Gedung Rapat Paripurna
+                </p>
+            </a>
+            <a class="content-item text-decoration-none d-flex flex-column w-100 p-3 my-2">
+                <div class="item-title d-flex justify-content-between">
+                    <h5 class="content-title m-0 mr-2">Peringatan Hari Pahlawan</h5>
+                    <p class="content-status-2 m-0">
+                        Selesai
+                    </p>
+                </div>
+                <p class="content-time m-0 mt-1">
+                    Kamis, 10 November 2022 | 08:00
+                </p>
+                <p class="content-desc m-0 mt-3">
+                    Lokasi: Gedung Rapat Paripurna
+                </p>
+            </a>
+            <a class="content-item text-decoration-none d-flex flex-column w-100 p-3 my-2">
+                <div class="item-title d-flex justify-content-between">
+                    <h5 class="content-title m-0 mr-2">Peringatan Hari Pahlawan</h5>
+                    <p class="content-status-2 m-0">
+                        Selesai
+                    </p>
+                </div>
+                <p class="content-time m-0 mt-1">
+                    Kamis, 10 November 2022 | 08:00
+                </p>
+                <p class="content-desc m-0 mt-3">
+                    Lokasi: Gedung Rapat Paripurna
+                </p>
+            </a>
+            <a class="content-item text-decoration-none d-flex flex-column w-100 p-3 my-2">
+                <div class="item-title d-flex justify-content-between">
+                    <h5 class="content-title m-0 mr-2">Peringatan Hari Pahlawan</h5>
+                    <p class="content-status-2 m-0">
+                        Selesai
+                    </p>
+                </div>
+                <p class="content-time m-0 mt-1">
+                    Kamis, 10 November 2022 | 08:00
+                </p>
+                <p class="content-desc m-0 mt-3">
+                    Lokasi: Gedung Rapat Paripurna
+                </p>
+            </a>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</body>
+</html>
