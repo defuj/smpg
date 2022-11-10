@@ -52,6 +52,22 @@
 	font-size: 20px;
 	font-weight: 600;
 	color: #1d1c1c;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.content-title:hover {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 99;
+	line-clamp: 99;
+	-webkit-box-orient: vertical;
 }
 
 .content-notif-title {
@@ -188,4 +204,13 @@
 
 .container-form .register {
 	font-size: 14px;
+}
+
+.max-line-2 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
