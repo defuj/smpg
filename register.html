@@ -27,7 +27,7 @@
 
     <main class="container-fluid" role="main">
         <div class="container-login text-center d-flex">
-            <div class="container-form d-flex flex-column p-3 m-auto">
+            <form action="index.html" class="container-form d-flex flex-column p-3 m-auto">
                 <a href="#" class="text-decoration-none">
                     <img src="https://mosya.co.id/static/media/app_icon_title_h.89f87233.png" alt="" width="100%">
                 </a>
@@ -38,8 +38,18 @@
                 </div>
 
                 <div class="input-group-custom d-flex flex-row pl-3 mt-3">
+                    <i class="fi fi-rr-building"></i>
+                    <input type="text" name="company" id="inputCompany" class="form-input"  placeholder="Nama Instansi" required>
+                </div>
+
+                <div class="input-group-custom d-flex flex-row pl-3 mt-3">
+                    <i class="fi fi-rr-chair office"></i>
+                    <input type="text" name="position" id="inputPosition" class="form-input"  placeholder="Jabatan" required>
+                </div>
+
+                <div class="input-group-custom d-flex flex-row pl-3 mt-3">
                     <i class="fi fi-rr-at"></i>
-                    <input type="email" name="email" id="inputEmail" class="form-input" placeholder="Alamat Email" required>
+                    <input type="text" name="usename" id="inputUsername" class="form-input" placeholder="Nama Pengguna" required>
                 </div>
         
                 <div class="input-group-custom d-flex flex-row pl-3 mt-3">
@@ -52,9 +62,9 @@
                     <input type="password" name="confimpassword" id="inputConfirmPassword" class="form-input" placeholder="Konfirmasi Kata Sandi" required>
                 </div>
 
-                <button class="btn btn-lg btn-block btn-red mt-3" type="button" id="buttonLogin">Buat Akun</button>
+                <button class="btn btn-lg btn-block btn-red mt-3" type="button" id="buttonRegister">Buat Akun</button>
                 <p class="register mt-3 mb-1">Sudah punya akun? <a href="login.html" class="link-register">Masuk</a></p>
-            </div>
+            </form>
             
         </div>
     </main>
@@ -63,5 +73,75 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="assets/js/bootstrap.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#buttonRegister').click(function() {
+                if($('#inputName').val() == ''){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Nama Lengkap tidak boleh kosong!',
+                    })
+                }else{
+                    if($('#inputCompany').val() == ''){
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Nama Instansi tidak boleh kosong!',
+                        })
+                    }else{
+                        if($('#inputPosition').val() == ''){
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Jabatan tidak boleh kosong!',
+                            })
+                        }else{
+                            if($('inputUsername').val() == ''){
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'Nama Pengguna tidak boleh kosong!',
+                                })
+                            }else{
+                                if($('#inputPassword').val() == ''){
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: 'Kata Sandi tidak boleh kosong!',
+                                    })
+                                }else{
+                                    if($('#inputConfirmPassword').val() == ''){
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Oops...',
+                                            text: 'Konfirmasi Kata Sandi tidak boleh kosong!',
+                                        })
+                                    }else{
+                                        if($('#inputPassword').val() != $('#inputConfirmPassword').val()){
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Oops...',
+                                                text: 'Konfirmasi Kata Sandi tidak sama!',
+                                            })
+                                        }else{
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: 'Berhasil',
+                                                text: 'Akun berhasil dibuat!',
+                                            }).then((result) => {
+                                                window.location.href = "login.html";
+                                            })
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
